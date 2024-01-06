@@ -1,0 +1,484 @@
+:root {
+  --primary: rgb(184, 184, 184);
+  --bg: #0f1e4f;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #e3e3e3;
+  color: #ffffff;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem 2% 0 1%;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ffffff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.navbar .navbar-min {
+  color: #000000;
+  margin: 0 0.5rem;
+}
+.logo {
+  max-width: 200px;
+  margin-left: 0;
+}
+
+.navbar .navbar-list a {
+  color: #000000;
+  display: inline-block;
+  font-size: 1rem;
+  margin: 0 0.5rem;
+}
+
+.navbar .navbar-list a:hover {
+  color: #bababa;
+}
+
+.navbar .navbar-list a::after {
+  content: " ";
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.1rem solid var(--primary);
+  transform: scaleX(0);
+  transition: 0.2s linear;
+}
+
+.navbar .navbar-list a:hover::after {
+  transform: scaleX(0.5);
+}
+
+.navbar .navbar-extra a {
+  color: #000000;
+  margin: 0 0.5rem;
+}
+
+.navbar .navbar-extra a:hover {
+  color: #bababa;
+}
+
+#hamburger-menu {
+  display: none;
+}
+
+/* Navbar search form */
+.navbar .search {
+  position: absolute;
+  top: 100%;
+  right: 3%;
+  background-color: #ffffff;
+  width: 40rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: 0.3s;
+}
+
+.navbar .search.active {
+  transform: scaleY(1);
+}
+
+.navbar .search #search-box {
+  height: 100%;
+  width: 100%;
+  font-size: 1.6rem;
+  color: var(--bg);
+  padding: 1rem;
+}
+
+.navbar .search label {
+  cursor: pointer;
+  font-size: 2rem;
+  margin-right: 1.5rem;
+  color: var(--bg);
+}
+
+/* shopping */
+/* tombol keranjang */
+.shopping-cart {
+  position: absolute;
+  top: 100%;
+  right: -100%;
+  height: 100vh;
+  width: 35rem;
+  padding: 0 1.5rem;
+  background-color: #0000009a;
+  color: #ffffff;
+  transition: 0.3s;
+}
+
+.shopping-cart.active {
+  right: 0;
+}
+
+.shopping-cart .cart-item {
+  margin: 2rem 0;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px dashed #ffffff;
+  position: relative;
+}
+
+.shopping-cart img {
+  height: 6rem;
+}
+
+.shopping-cart h3 {
+  font-size: 1.6rem;
+  padding-bottom: 0.5rem;
+}
+
+.shopping-cart .item-price {
+  font-size: 1.2rem;
+}
+
+.shopping-cart .remove-item {
+  position: absolute;
+  right: 1rem;
+  cursor: pointer;
+}
+
+.shopping-cart .remove-item:hover {
+  color: var(--primary);
+}
+
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-image: url("../img/pexels-photo-11239253.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  object-position: center;
+}
+
+.hero::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 30%;
+  bottom: 0;
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.607) 8%,
+    rgba(255, 255, 255, 0) 50%
+  );
+}
+
+.hero .content {
+  padding: 1.4rem 7%;
+  max-width: 60rem;
+}
+
+.hero .content h1 {
+  font-size: 4em;
+  color: #d0d0d0;
+  text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+  line-height: 1.2;
+  font-weight: 500;
+  animation: forwards;
+  animation-duration: 3s;
+}
+
+.hero .content p {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  line-height: 1.4;
+  font-weight: 150;
+  text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+  mix-blend-mode: difference;
+}
+
+.hero .content .cta {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 1rem 3rem;
+  font-size: 1.4rem;
+  color: #1f1f1f;
+  background-color: #999999;
+}
+
+/* About Section */
+.about,
+.produk,
+.sti,
+.kontak,
+.music {
+  min-height: 50vh;
+  text-align: center;
+  padding: 7rem 7% 1.4rem;
+  color: #1f1f1f;
+}
+
+.video {
+  min-height: 50vh;
+  text-align: center;
+  padding: 7rem 7% 1.4rem;
+  color: #1f1f1f;
+}
+.about h2,
+.music h2,
+.video h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 3rem;
+}
+
+.about p,
+.music p,
+.video p {
+  text-align: center;
+  max-width: 45rem;
+  margin: auto;
+  margin-top: 100;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.music .img {
+  display: flex;
+}
+.music img {
+  width: 70%;
+  height: 50%;
+}
+.produk .cta,
+.sti .cta,
+.kontak .cta {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 1rem 3rem;
+  font-size: 1.4rem;
+  color: #ffffff;
+  background-color: #999999;
+
+  box-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+  justify-content: center;
+}
+
+.about .button {
+  margin-top: 2rem;
+  display: inline-block;
+  padding: 1rem 3rem;
+  font-size: 1.4rem;
+  color: #ffffff;
+  background-color: #999999;
+
+  box-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+  justify-content: center;
+}
+/* PROSUK */
+.produk {
+  margin-top: 5rem;
+  min-height: 50vh;
+  text-align: center;
+  align-items: center;
+  background-image: url("../img/pexels-photo-7005461.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.produk h2,
+.sti h2,
+.kontak h2 {
+  text-align: center;
+  margin: auto;
+  margin-top: 1rem;
+  padding-bottom: 2rem;
+  font-size: 2rem;
+
+  color: #e6e6e6;
+}
+
+.produk p,
+.sti p,
+.kontak p {
+  text-align: center;
+  max-width: 45rem;
+  margin: auto;
+  margin-top: 100;
+  font-weight: 500;
+  line-height: 1.6;
+  color: #ffffff;
+}
+/* sti */
+.sti {
+  align-items: center;
+  min-height: 50vh;
+  background-image: url("../img/Metode-Pembelajaran-Berbasis-TIK-1000x570.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+/* musik */
+.kontak {
+  align-items: center;
+  min-height: 50vh;
+  background-image: url("../img/pexels-photo-8542537.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+/* kontak */
+.kontak {
+  align-items: center;
+  min-height: 50vh;
+  background-image: url("../img/pexels-photo-8542537.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+/* footer */
+footer {
+  background-color: #252525;
+  text-align: center;
+  padding: 1rem 0.3rem;
+}
+
+.footer .socials {
+  padding: 1rem 0;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+footer .socials a {
+  color: #8e8e8e;
+  margin: 1rem;
+  margin-top: 2rem;
+}
+
+footer .socials a:hover,
+footer .links a:hover {
+  color: #040b52;
+}
+
+footer .links {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+footer .links a {
+  color: #aaabb8;
+  padding: 0.7rem 1rem;
+}
+
+footer .credit a {
+  color: #040926;
+}
+
+footer .credit {
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+/* Media Queris */
+@media (max-width: 3840px) {
+  html {
+  }
+}
+
+#hamburger-menu {
+  display: inline-block;
+}
+.navbar .navbar-nav {
+  position: absolute;
+  top: 100%;
+  left: -100%;
+  background-color: rgba(10, 10, 10, 0.559);
+  width: 30rem;
+  height: 100vh;
+  transition: 0.3s;
+}
+
+.navbar .navbar-nav.active {
+  left: 0;
+}
+
+.navbar .navbar-nav a {
+  color: #fff;
+  display: block;
+  margin: 1.5rem;
+  padding: 0.5rem;
+  font-size: 2rem;
+}
+
+.navbar .navbar-nav a::after {
+  transform-origin: 0 0;
+}
+
+.navbar .navbar-nav a:hover::after {
+  transform: scaleX(0.2);
+}
+
+.about .row {
+  flex-wrap: wrap;
+}
+
+.about .row .about-img {
+  height: 24rem;
+  object-fit: cover;
+  object-position: center;
+}
+
+.about .row .content {
+  padding: 0;
+}
+
+.about .row .content p h3 {
+  margin-top: 1rem;
+  font-size: 1.6rem;
+}
+/* Laptop */
+@media (max-width: 1366px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  html {
+    font-size: 62.5%;
+  }
+  .navbar .search {
+    width: 50%;
+    right: 2rem;
+  }
+}
+
+/* Mobile Phone */
+@media (max-width: 450px) {
+  html {
+    font-size: 55%;
+  }
+}
