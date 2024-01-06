@@ -1,0 +1,527 @@
+:root {
+  --primary: rgb(184, 184, 184);
+  --bg: #0f1e4f;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #e3e3e3;
+  color: #ffffff;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem 2% 0 1%;
+  background-color: rgb(255, 255, 255);
+  border-bottom: 1px solid #ffffff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.navbar .navbar-min {
+  color: #000000;
+  margin: 0 0.5rem;
+}
+.logo {
+  max-width: 200px;
+  margin-left: 0;
+}
+
+.navbar .navbar-list a {
+  color: #000000;
+  display: inline-block;
+  font-size: 1rem;
+  margin: 0 0.5rem;
+}
+
+.navbar .navbar-list a:hover {
+  color: #bababa;
+}
+
+.navbar .navbar-list a::after {
+  content: " ";
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.1rem solid var(--primary);
+  transform: scaleX(0);
+  transition: 0.2s linear;
+}
+
+.navbar .navbar-list a:hover::after {
+  transform: scaleX(0.5);
+}
+
+.navbar .navbar-extra a {
+  color: #000000;
+  margin: 0 0.5rem;
+}
+
+.navbar .navbar-extra a:hover {
+  color: #bababa;
+}
+
+#hamburger-menu {
+  display: inline-block;
+}
+
+/* Navbar search form */
+.navbar .search {
+  position: absolute;
+  top: 100%;
+  right: 3%;
+  background-color: #ffffff;
+  width: 40rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: 0.3s;
+}
+
+.navbar .search.active {
+  transform: scaleY(1);
+}
+
+.navbar .search #search-box {
+  height: 100%;
+  width: 100%;
+  font-size: 1.6rem;
+  color: var(--bg);
+  padding: 1rem;
+}
+
+.navbar .search label {
+  cursor: pointer;
+  font-size: 2rem;
+  margin-right: 1.5rem;
+  color: var(--bg);
+}
+
+/* tombol keranjang */
+.shopping-cart {
+  position: absolute;
+  top: 100%;
+  right: -100%;
+  height: 100vh;
+  width: 35rem;
+  padding: 0 1.5rem;
+  background-color: #0000009a;
+  color: #ffffff;
+  transition: 0.3s;
+}
+
+.shopping-cart.active {
+  right: 0;
+}
+
+.shopping-cart .cart-item {
+  margin: 2rem 0;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px dashed #ffffff;
+  position: relative;
+}
+
+.shopping-cart img {
+  height: 6rem;
+}
+
+.shopping-cart h3 {
+  font-size: 1.6rem;
+  padding-bottom: 0.5rem;
+}
+
+.shopping-cart .item-price {
+  font-size: 1.2rem;
+}
+
+.shopping-cart .remove-item {
+  position: absolute;
+  right: 1rem;
+  cursor: pointer;
+}
+
+.shopping-cart .remove-item:hover {
+  color: var(--primary);
+}
+
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-image: url("../img/header.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.hero::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 30%;
+  bottom: 0;
+  background: linear-gradient(
+    0deg,
+    rgba(192, 192, 192, 0.929) 8%,
+    rgba(255, 255, 255, 0) 50%
+  );
+}
+
+.hero .content {
+  padding: 1.4rem 7%;
+  max-width: 60rem;
+}
+
+.hero .content h1 {
+  font-size: 3em;
+  color: #d0d0d0;
+  text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+  line-height: 1.2;
+}
+
+.hero .content p {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  line-height: 1.4;
+  font-weight: 150;
+  text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+  mix-blend-mode: difference;
+}
+
+.hero .content .cta {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 1rem 3rem;
+  font-size: 1.4rem;
+  color: #1f1f1f;
+  background-color: #999999;
+}
+
+/* About Section */
+.about,
+.products {
+  padding: 7rem 7% 1.4rem;
+  text-align: center;
+  color: #1f1f1f;
+}
+
+.about h2,
+.products h2,
+.music h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+.about p,
+.products p,
+.music p {
+  text-align: center;
+  max-width: 45rem;
+  margin: auto;
+  font-weight: 500;
+  line-height: 1.6;
+}
+.music {
+  padding: 1.5rem 7% 1.4rem;
+  text-align: center;
+  color: #1f1f1f;
+}
+
+.music h2 {
+  text-align: center;
+  font-size: 1.5rem;
+
+  margin-bottom: 1rem;
+}
+
+.music p {
+  text-align: center;
+  max-width: 45rem;
+  margin: auto;
+  font-weight: 500;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+.music h3 {
+  text-align: center;
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+}
+/* Products Section */
+.products .row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 2fr));
+  gap: 1.5rem;
+  margin-top: 7em;
+}
+
+.products .product-card {
+  text-align: center;
+  background-color: whitesmoke;
+  border: 1px solid #666;
+  padding: 2rem;
+}
+
+.products .product-icons {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.products .product-icons a {
+  width: 4rem;
+  height: 4rem;
+  color: #000000;
+  margin: 0.3rem;
+  border: 1px solid #666;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.products .product-icons a:hover {
+  color: #fff;
+  background-color: #0f1e4f;
+  border: 1px solid var(--primary);
+}
+
+.products .product-image {
+  padding: 1rem 0;
+}
+
+.products .product-image img {
+  height: 15rem;
+}
+
+.products .product-content h3 {
+  font-size: 1.6rem;
+}
+
+.products .product-stars {
+  font-size: 1.7rem;
+  padding: 0.8rem;
+  color: #766200;
+}
+
+.products .product-stars .star-full {
+  fill: #ffd608;
+}
+
+.products .product-price {
+  font-size: 0.7rem;
+
+  font-style: italic;
+  color: #666;
+}
+
+.products .product-price span {
+  text-decoration: line-through;
+  font-weight: lighter;
+  font-size: 1rem;
+}
+
+/* footer */
+footer {
+  background-color: #252525;
+  text-align: center;
+  padding: 1rem 0.3rem;
+}
+
+.footer .socials {
+  padding: 1rem 0;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+footer .socials a {
+  color: #8e8e8e;
+  margin: 1rem;
+  margin-top: 2rem;
+}
+
+footer .socials a:hover,
+footer .links a:hover {
+  color: #524104;
+}
+
+footer .links {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+footer .links a {
+  color: #aaabb8;
+  padding: 0.7rem 1rem;
+}
+
+footer .credit a {
+  color: #040926;
+}
+
+footer .credit {
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+footer .sosmed {
+}
+/* box items */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-container {
+  position: relative;
+  background-color: #fefefe;
+  color: var(--bg);
+  margin: 15% auto;
+  padding: 1.2rem;
+  border: 1px solid #666;
+  width: 80%;
+  animation: animateModal 0.5s;
+}
+
+/* animasi star */
+@keyframes animateModal {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+.modal-container .close-icon {
+  position: absolute;
+  right: 1rem;
+}
+
+.modal-content {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.modal-content img {
+  height: 15rem;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+}
+
+.modal-content p {
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  margin-top: 1.2rem;
+}
+
+.modal-content a {
+  display: flex;
+  gap: 1rem;
+  width: 12rem;
+  background-color: var(--primary);
+  color: #fff;
+  margin-top: 1rem;
+  padding: 1rem 1.6rem;
+}
+
+/* Media Queris */
+@media (max-width: 3840px) {
+  html {
+  }
+}
+
+#hamburger-menu {
+  display: inline-block;
+}
+.navbar .navbar-nav {
+  position: absolute;
+  top: 100%;
+  left: -100%;
+  background-color: rgba(10, 10, 10, 0.559);
+  width: 30rem;
+  height: 100vh;
+  transition: 0.3s;
+}
+
+.navbar .navbar-nav.active {
+  left: 0;
+}
+
+.navbar .navbar-nav a {
+  color: #fff;
+  display: block;
+  margin: 1.5rem;
+  padding: 0.5rem;
+  font-size: 2rem;
+}
+
+.navbar .navbar-nav a::after {
+  transform-origin: 0 0;
+}
+
+.navbar .navbar-nav a:hover::after {
+  transform: scaleX(0.2);
+}
+
+/* Laptop */
+@media (max-width: 1366px) {
+  html {
+    font-size: 75%;
+  }
+  .navbar .search {
+    width: 50%;
+    right: 2rem;
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  html {
+    font-size: 62.5%;
+  }
+
+  .modal-content {
+    flex-wrap: wrap;
+  }
+}
+
+/* Mobile Phone */
+@media (max-width: 450px) {
+  html {
+    font-size: 55%;
+  }
+}
